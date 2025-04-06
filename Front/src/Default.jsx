@@ -16,7 +16,7 @@ const Default = () => {
     const [rowsPerPage, setRowsPerPage] = useState(5)
     const [totalRows, setTotalRows] = useState(0)
 
-    const enabledRowsPerPage = [1, 10, 25, 50, 100];
+    const enabledRowsPerPage = [5, 10, 25, 50, 100];
 
 
     const [getValues,,] = useDefaultFetching(async (page) => {
