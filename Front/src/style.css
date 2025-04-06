@@ -1,0 +1,76 @@
+/* Основные стили для таблицы */
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+/* Стили для заголовков таблицы */
+.data-table th {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 2px solid #ddd;
+    font-weight: bold;
+}
+
+/* Стили для конкретных заголовков */
+.data-table th.id {
+    background-color: #4CAF50; /* Зеленый */
+    color: white;
+}
+
+.data-table th.code {
+    background-color: #2196F3; /* Синий */
+    color: white;
+}
+
+.data-table th.value {
+    background-color: #FF9800; /* Оранжевый */
+    color: white;
+}
+
+.data-table th.representative {
+    background-color: #9C27B0; /* Фиолетовый */
+    color: white;
+}
+
+/* Стили для ячеек таблицы */
+.data-table td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Стили для четных строк */
+.data-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Стили для нечетных строк */
+.data-table tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+/* Стили при наведении на строку */
+.data-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Стили для пагинации */
+.paginator {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+/* Стили для кнопок пагинации */
+.paginator button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+.paginator button:hover {
+    background-color: #0056b3;
+}
