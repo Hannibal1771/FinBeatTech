@@ -25,14 +25,7 @@ namespace FinBeatTechAPI.BLL.Service
             IEnumerable<Default> dataList = null;
             int totalRows = 0;
 
-            if(filter != null)
-            {
-                (totalRows, dataList) = await _defaultRepository.GetAllWithPaginationAsync(requestDTO.Page, requestDTO.Limit, filter);
-            }
-            else
-            {
-                (totalRows, dataList) = await _defaultRepository.GetAllWithPaginationAsync(requestDTO.Page, requestDTO.Limit);
-            }
+           (totalRows, dataList) = await _defaultRepository.GetAllWithPaginationAsync(requestDTO.Page, requestDTO.Limit, filter);
           
             return (totalRows, _mapper.Map<IEnumerable<DefaultDTO>>(dataList));
         }
