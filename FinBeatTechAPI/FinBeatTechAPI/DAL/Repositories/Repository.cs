@@ -52,27 +52,6 @@ namespace FinBeatTechAPI.DAL.Repositories
             return query.FirstOrDefault();
         }
 
-        public async Task InsertAsync(IEnumerable<T> entities)
-        {
-            using (var transaction = _defaultDbContext.Database.BeginTransaction())
-            {
-                try
-                {
-                    await _defaultDbContext.Database.ExecuteSqlAsync($"TRUNCATE TABLE [dbo].[DefaultTable]");
-
-                    await dbSet.AddRangeAsync(entities);
-
-                    await SaveAsync();
-
-                    await transaction.CommitAsync();
-                }
-                catch
-                {
-                    transaction.Rollback();
-                }
-            }                     
-        }
-
         public void Remove(T entity)
         {
             dbSet.Remove(entity);

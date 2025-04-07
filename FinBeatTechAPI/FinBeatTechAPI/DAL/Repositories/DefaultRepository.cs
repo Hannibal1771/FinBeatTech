@@ -19,7 +19,9 @@ namespace FinBeatTechAPI.DAL.Repositories
                 {
                     await _defaultDbContext.Database.ExecuteSqlAsync($"TRUNCATE TABLE [dbo].[DefaultTable]");
 
-                    await _defaultDbContext.BulkDeleteAsync(entities);
+                    await _defaultDbContext.defaults.AddRangeAsync(entities);
+
+                    await SaveAsync();
 
                     await transaction.CommitAsync();
                 }

@@ -18,7 +18,7 @@ namespace FinBeatTechAPI.BLL.Service
             _mapper = mapper;
         }
 
-        public async Task CreateDefaultDataAsync(IEnumerable<CreateRequestDTO> requestDTOsList) => await _defaultRepository.InsertAsync(_mapper.Map<IEnumerable<Default>>(requestDTOsList));
+        public async Task CreateDefaultDataAsync(IEnumerable<CreateRequestDTO> requestDTOsList) => await _defaultRepository.BulkInsertForDefaultAsync(_mapper.Map<IEnumerable<Default>>(requestDTOsList));
 
         public async Task<(int, IEnumerable<DefaultDTO>)> GetDefaultDataAsync(GetRequestDTO requestDTO, Expression<Func<Default, bool>>? filter = null)
         {
