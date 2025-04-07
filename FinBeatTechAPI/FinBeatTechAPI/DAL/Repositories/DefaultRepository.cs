@@ -13,6 +13,8 @@ namespace FinBeatTechAPI.DAL.Repositories
 
         public async Task BulkInsertForDefaultAsync(IEnumerable<Default> entities)
         {          
+            entities = entities.OrderBy(x => x.Code);
+
             using(var transaction = _defaultDbContext.Database.BeginTransaction())
             {
                 try
